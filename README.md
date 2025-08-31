@@ -1,4 +1,4 @@
-# Blob Firebox
+# blob-firebox
 
 **blob-firebox** is a Dockerized headless Firefox environment with a lightweight window manager and VNC access.
 It's designed to be running firefox inside a container while keeping state, download/files, and secrets mounted as external volumes.
@@ -86,5 +86,18 @@ See [`documentation/auto-deploy-README.md`](documentation/auto-deploy-README.md)
 See [documentation/TODO.md](documentation/TODO.md) for planned improvements.
 
 ---
-
 ## License
+
+This project is licensed under the BSD 3-Clause License.  
+See the [LICENSE](LICENSE) file for details.  
+
+For AI-related usage, see the [AI_POLICY.md](AI_POLICY.md).
+
+## Commercial Use
+
+blob-firebox is an open-source project released under the BSD 3-Clause License.
+If you're interested in commercial use, licensing, or collaboration, feel free to reach out.
+
+## Attribution
+
+Project initialized and maintained by **Blob** (aka mrmodori).
