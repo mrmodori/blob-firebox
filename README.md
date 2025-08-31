@@ -3,6 +3,10 @@
 **blob-firebox** is a Dockerized headless Firefox environment with a lightweight window manager and VNC access.
 It's designed to be running firefox inside a container while keeping state, download/files, and secrets mounted as external volumes.
 
+## Why?
+
+I needed a remote browser I could trust, isolate, restart, and access from low-power machines, so I built one that does exactly that.
+
 ---
 
 ## Features
