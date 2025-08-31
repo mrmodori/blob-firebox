@@ -1,0 +1,56 @@
+#!/bin/bash
+############################
+# Git hook for auto script #
+############################
+
+# Exit on fail.
+set -euo pipefail
+
+##################################
+# Configuration for This Project #
+##################################
+
+# Environment root location.
+ENVIRONMENT_ROOT="/data"
+
+# Project name.
+PROJECT="blob-firebox"
+
+#########################
+# Environment Locations #
+#########################
+
+# The firebox repo location.
+REPO="$ENVIRONMENT_ROOT/git/$PROJECT.git"
+
+# The build environment.
+BUILD="$ENVIRONMENT_ROOT/build/$PROJECT"
+
+# The docker environment.
+DOCKER="$ENVIRONMENT_ROOT/docker/$PROJECT"
+
+# Where you want to store the build images.
+IMAGE_DIR="$ENVIRONMENT_ROOT/images"
+
+#################
+# Setup and run #
+#################
+
+# Setting up config.
+SCRIPT="$BUILD/auto-deploy.sh"
+LOG="$DOCKER/deploy.log"
+
+# Make sure git checksout the repo.
+GIT_WORK_TREE="$BUILD" GIT_DIR="$REPO" git checkout -f
+
+# Make sure deploy script is executable
+chmod +x "$SCRIPT"
+
+# Call deploy script with env variables injected
+PROJECT="$PROJECT" \
+REPO="$REPO" \
+BUILD="$BUILD" \
+DOCKER="$DOCKER" \
+IMAGE_DIR="$IMAGE_DIR" \
+LOG="$LOG" \
+"$SCRIPT"

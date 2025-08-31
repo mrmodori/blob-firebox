@@ -1,0 +1,13 @@
+services:
+  blob-firebox:
+    image: blob-firebox:latest
+    container_name: blob-firebox
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5900:5900"
+    shm_size: "2g"
+    user: 1000:1000
+    volumes:
+      - ./profile:/home/firefox/.mozilla
+      - ./outbox:/home/firefox/outbox
+      - ./secret:/home/firefox/secret

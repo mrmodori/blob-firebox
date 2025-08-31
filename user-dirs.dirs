@@ -1,0 +1,11 @@
+##########################
+# XDG user dirs override #
+##########################
+XDG_DESKTOP_DIR="$HOME/outbox"
+XDG_DOWNLOAD_DIR="$HOME/outbox"
+XDG_TEMPLATES_DIR="$HOME/outbox"
+XDG_PUBLICSHARE_DIR="$HOME/outbox"
+XDG_DOCUMENTS_DIR="$HOME/outbox"
+XDG_MUSIC_DIR="$HOME/outbox"
+XDG_PICTURES_DIR="$HOME/outbox"
+XDG_VIDEOS_DIR="$HOME/outbox"
