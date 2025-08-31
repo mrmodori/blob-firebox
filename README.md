@@ -98,6 +98,12 @@ For AI-related usage, see the [AI_POLICY.md](AI_POLICY.md).
 blob-firebox is an open-source project released under the BSD 3-Clause License.
 If you're interested in commercial use, licensing, or collaboration, feel free to reach out.
 
+## AI Usage Clarification
+
+These terms restate and emphasize how the BSD 3-Clause License applies to AI/ML uses. Training, fine-tuning, or embedding of this project into AI/ML systems is permitted as long as the BSD 3-Clause License and attribution are preserved.
+
+These clarifications do not remove or restrict any rights already granted by the BSD 3-Clause License. For all non-AI uses, the BSD 3-Clause License alone governs.
+
 ## Attribution
 
 Project initialized and maintained by **Blob** (aka mrmodori).
