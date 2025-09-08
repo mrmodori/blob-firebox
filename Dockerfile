@@ -11,7 +11,35 @@ RUN pacman -Sy --noconfirm \
     dbus \
     xdg-user-dirs \
     tigervnc \
+    git \
+    python \
+    python-pip \
  && pacman -Scc --noconfirm
+
+#####################
+# Browser based VNC #
+#####################
+# noVNC + websockify.
+RUN git clone --depth=1 https://github.com/novnc/noVNC /opt/novnc
+
+# Symlink the vnc.
+RUN ln -s /opt/novnc/vnc.html /opt/novnc/index.html
+
+# Create virtual environment.
+RUN python -m venv /opt/venv
+
+# Upgrade pip
+RUN /opt/venv/bin/pip install --no-cache-dir --upgrade pip
+
+# Install websockify
+RUN /opt/venv/bin/pip install --no-cache-dir websockify
+
+# Link websockify
+RUN ln -s /opt/venv/bin/websockify /usr/local/bin/websockify
+
+###################
+# X11 Environment #
+###################
 
 # X socket dir as root.
 RUN mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix

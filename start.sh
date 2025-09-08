@@ -77,6 +77,12 @@ x0vncserver -display "$DISPLAY" \
   -SetPrimary=1 -SendPrimary=1 &
 log "Started x0vncserver (PID=$!)"
 
+#####################
+# Websocify - noVNC #
+#####################
+websockify --web=/opt/novnc 6080 localhost:5900 &
+log "Started websockify (PID=$!)"
+
 ##########
 # Tweaks #
 ##########
@@ -84,8 +90,8 @@ log "Started x0vncserver (PID=$!)"
 export MOZ_ENABLE_WAYLAND=0
 export GDK_BACKEND=x11
 export LIBGL_ALWAYS_SOFTWARE=1
-export MOZ_WEBRENDER=0
-export MOZ_X11_EGL=0
+export MOZ_WEBRENDER=1
+export MOZ_X11_EGL=1
 
 ######################
 # The container loop #

@@ -53,6 +53,10 @@ docker compose up --build -d
 * Connect to: `localhost:5900`
 * Use the password you set in step 3.
 
+#### 5.b. Alternative connect
+
+* Open `http://localhost:6080/vnc.html` in webbrowser.
+
 ---
 
 ## Volumes
